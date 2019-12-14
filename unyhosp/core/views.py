@@ -9,5 +9,10 @@ class HospitalViewSet(viewsets.ModelViewSet):
 
 
 class UTIViewSet(viewsets.ModelViewSet):
-    queryset = models.Hospital.objects.all()
+    queryset = models.UTI.objects.all()
     serializer_class = serializers.UTISerializer
+
+
+class BedViewSet(viewsets.ModelViewSet):
+    queryset = models.Bed.objects.all()
+    serializer_class = serializers.BedSerializer
