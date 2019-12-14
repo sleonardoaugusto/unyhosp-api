@@ -16,3 +16,12 @@ class UTI(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Bed(models.Model):
+    name = models.CharField(max_length=255)
+    uti = models.ForeignKey(UTI, on_delete=models.CASCADE)
+    created = models.DateTimeField(auto_now_add=True, blank=True)
+
+    def __str__(self):
+        return self.name

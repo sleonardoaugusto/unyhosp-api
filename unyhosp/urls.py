@@ -19,6 +19,8 @@ from unyhosp.core import views
 
 router = routers.DefaultRouter()
 router.register(r'hospitals', views.HospitalViewSet)
+router.register(r'utis', views.UTIViewSet)
+router.register(r'beds', views.BedViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),

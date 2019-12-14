@@ -13,3 +13,9 @@ class UTISerializer(serializers.ModelSerializer):
     class Meta:
         model = models.UTI
         fields = '__all__'
+
+
+class BedSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Bed
+        fields = '__all__'
