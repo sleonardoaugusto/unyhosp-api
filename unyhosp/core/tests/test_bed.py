@@ -4,7 +4,7 @@ from unyhosp.core import models
 import json
 
 
-class UTITest(TestCase, ResourceMethods):
+class BedTest(TestCase, ResourceMethods):
     def setUp(self):
         self.resource = 'beds'
         h = models.Hospital.objects.create(name='Hospital - Albert Einstein')
