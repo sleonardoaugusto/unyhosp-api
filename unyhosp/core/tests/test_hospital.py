@@ -6,7 +6,6 @@ import json
 
 class HospitalTest(TestCase, ResourceMethods):
     def setUp(self):
-        self.response = self.client.get('/hospitals')
         self.data = {"name": "Albert Einstein"}
         self.resource = 'hospitals'
 
