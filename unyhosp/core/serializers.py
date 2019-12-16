@@ -19,3 +19,9 @@ class BedSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Bed
         fields = '__all__'
+
+
+class PacientSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Pacient
+        fields = '__all__'
