@@ -10,7 +10,7 @@ class HospitalTest(TestCase, ResourceMethods):
         self.resource = 'hospitals'
 
     def test_get(self):
-        """GET hospital/ must return status code 200 """
+        """GET hospitals/ must return status code 200 """
         url = self._url(resource=self.resource)
         response = self.client.get(url)
         self.assertEqual(200, response.status_code)
