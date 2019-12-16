@@ -21,3 +21,8 @@ class BedViewSet(viewsets.ModelViewSet):
 class PacientViewSet(viewsets.ModelViewSet):
     queryset = models.Pacient.objects.all()
     serializer_class = serializers.PacientSerializer
+
+
+class AttendanceViewSet(viewsets.ModelViewSet):
+    queryset = models.Attendance.objects.all()
+    serializer_class = serializers.AttendanceSerializer
