@@ -9,13 +9,13 @@ class AttendanceTest(TestCase, ResourceMethods):
         self.resource = 'attendances'
         h = models.Hospital.objects.create(name='Hospital - Albert Einstein')
         u = models.UTI.objects.create(name='UTI - XPTO', hospital=h)
-        b = models.Bed.objects.create(name='Leito - XYZ', uti=u)
         p = models.Pacient.objects.create(
             name='Romildo Ferrarezzi',
             document_id=45009877899,
             email='romildo.f@gmail.com',
             date_of_birth='1995-08-06'
         )
+        b = models.Bed.objects.create(name='Leito - XYZ', uti=u, pacient=p)
         self.data = {
             "entry_reason": "Lorem Ipsum",
             "hma": "Lorem Ipsum",
@@ -34,7 +34,6 @@ class AttendanceTest(TestCase, ResourceMethods):
             "ventilation": "Lorem Ipsum",
             "complications": "Lorem Ipsum",
             "therapeutic_plan": "Lorem Ipsum",
-            "pacient": p.id,
             "bed": b.id
         }
 

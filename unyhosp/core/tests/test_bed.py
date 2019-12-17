@@ -9,7 +9,13 @@ class BedTest(TestCase, ResourceMethods):
         self.resource = 'beds'
         h = models.Hospital.objects.create(name='Hospital - Albert Einstein')
         u = models.UTI.objects.create(name='UTI - XPTO', hospital=h)
-        self.data = {"name": "Bed - XYZ", "uti": u.id}
+        p = models.Pacient.objects.create(
+            name='Romildo Ferrarezzi',
+            document_id=45009877899,
+            email='romildo.f@gmail.com',
+            date_of_birth='1995-08-06'
+        )
+        self.data = {"name": "Bed - XYZ", "uti": u.id, "pacient": p.id}
 
     def test_get(self):
         """GET beds/ must return status code 200 """
