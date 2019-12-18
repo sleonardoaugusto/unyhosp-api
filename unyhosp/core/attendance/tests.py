@@ -1,9 +1,9 @@
 from django.test import TestCase
 from unyhosp.test_utils.methods import ResourceMethods
-from unyhosp.core import models
 from unyhosp.core.hospital.model import Hospital
 from unyhosp.core.uti.model import UTI
 from unyhosp.core.pacient.model import Pacient
+from unyhosp.core.bed.model import Bed
 import json
 
 
@@ -18,7 +18,7 @@ class AttendanceTest(TestCase, ResourceMethods):
             email='romildo.f@gmail.com',
             date_of_birth='1995-08-06'
         )
-        b = models.Bed.objects.create(name='Leito - XYZ', uti=u, pacient=p)
+        b = Bed.objects.create(name='Leito - XYZ', uti=u, pacient=p)
         self.data = {
             "entry_reason": "Lorem Ipsum",
             "hma": "Lorem Ipsum",

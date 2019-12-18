@@ -1,5 +1,4 @@
 from django.db import models
-from unyhosp.core.hospital.model import Hospital
 from unyhosp.core.bed.model import Bed
 
 
