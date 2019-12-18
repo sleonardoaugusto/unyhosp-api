@@ -1,6 +1,6 @@
 from django.db import models
-from unyhosp.core.services.uti.model import UTI
-from unyhosp.core.services.pacient.model import Pacient
+from unyhosp.core.api.uti.model import UTI
+from unyhosp.core.api.pacient.model import Pacient
 
 
 class Bed(models.Model):

@@ -1,15 +1,14 @@
 from django.test import TestCase
 from unyhosp.test_utils.methods import ResourceMethods
-from unyhosp.core.services.hospital.model import Hospital
-from unyhosp.core.services.uti.model import UTI
-from unyhosp.core.services.pacient.model import Pacient
-from unyhosp.core.services.bed.model import Bed
+from unyhosp.core.api.hospital.model import Hospital
+from unyhosp.core.api.uti.model import UTI
+from unyhosp.core.api.pacient.model import Pacient
 import json
 
 
-class AttendanceTest(TestCase, ResourceMethods):
+class BedTest(TestCase, ResourceMethods):
     def setUp(self):
-        self.resource = 'attendances'
+        self.resource = 'beds'
         h = Hospital.objects.create(name='Hospital - Albert Einstein')
         u = UTI.objects.create(name='UTI - XPTO', hospital=h)
         p = Pacient.objects.create(
@@ -18,30 +17,10 @@ class AttendanceTest(TestCase, ResourceMethods):
             email='romildo.f@gmail.com',
             date_of_birth='1995-08-06'
         )
-        b = Bed.objects.create(name='Leito - XYZ', uti=u, pacient=p)
-        self.data = {
-            "entry_reason": "Lorem Ipsum",
-            "hma": "Lorem Ipsum",
-            "comorbidity": "Lorem Ipsum",
-            "atb": "Lorem Ipsum",
-            "hd": "Lorem Ipsum",
-            "medicines_in_use": "Lorem Ipsum",
-            "previous_pathologies": "Lorem Ipsum",
-            "allergies": "Lorem Ipsum",
-            "cultures": "Lorem Ipsum",
-            "vasoactive_drugs": "Lorem Ipsum",
-            "sedation": "Lorem Ipsum",
-            "venous_access": "Lorem Ipsum",
-            "diet": "Lorem Ipsum",
-            "probes_and_drains": "Lorem Ipsum",
-            "ventilation": "Lorem Ipsum",
-            "complications": "Lorem Ipsum",
-            "therapeutic_plan": "Lorem Ipsum",
-            "bed": b.id
-        }
+        self.data = {"name": "Bed - XYZ", "uti": u.id, "pacient": p.id}
 
     def test_get(self):
-        """GET attendances/ must return status code 200 """
+        """GET beds/ must return status code 200 """
         url = self._url(resource=self.resource)
         response = self.client.get(url)
         self.assertEqual(200, response.status_code)

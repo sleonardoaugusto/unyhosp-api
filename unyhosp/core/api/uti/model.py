@@ -1,5 +1,5 @@
 from django.db import models
-from unyhosp.core.services.hospital.model import Hospital
+from unyhosp.core.api.hospital.model import Hospital
 
 
 class UTI(models.Model):
