@@ -3,27 +3,29 @@ from rest_framework import serializers
 from . import models
 
 
-class HospitalSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = models.Hospital
-        fields = '__all__'
-
-
 class UTISerializer(serializers.ModelSerializer):
     class Meta:
         model = models.UTI
         fields = '__all__'
 
 
-class BedSerializer(serializers.ModelSerializer):
+class PacientSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Pacient
+        fields = '__all__'
+
+
+class BedReadSerializer(serializers.ModelSerializer):
+    pacient = PacientSerializer(read_only=True)
+
     class Meta:
         model = models.Bed
         fields = '__all__'
 
 
-class PacientSerializer(serializers.ModelSerializer):
+class BedActionsSerializer(serializers.ModelSerializer):
     class Meta:
-        model = models.Pacient
+        model = models.Bed
         fields = '__all__'
 
 

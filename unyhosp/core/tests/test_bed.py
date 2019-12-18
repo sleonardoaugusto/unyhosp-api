@@ -1,13 +1,14 @@
 from django.test import TestCase
 from unyhosp.test_utils.methods import ResourceMethods
 from unyhosp.core import models
+from unyhosp.core.hospital.model import Hospital
 import json
 
 
 class BedTest(TestCase, ResourceMethods):
     def setUp(self):
         self.resource = 'beds'
-        h = models.Hospital.objects.create(name='Hospital - Albert Einstein')
+        h = Hospital.objects.create(name='Hospital - Albert Einstein')
         u = models.UTI.objects.create(name='UTI - XPTO', hospital=h)
         p = models.Pacient.objects.create(
             name='Romildo Ferrarezzi',

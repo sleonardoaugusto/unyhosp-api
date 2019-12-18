@@ -16,9 +16,10 @@ Including another URLconf
 from django.urls import path, include
 from rest_framework import routers
 from unyhosp.core import views
+from unyhosp.core.hospital import view
 
 router = routers.DefaultRouter()
-router.register(r'hospitals', views.HospitalViewSet)
+router.register(r'hospitals', view.HospitalViewSet)
 router.register(r'utis', views.UTIViewSet)
 router.register(r'beds', views.BedViewSet)
 router.register(r'pacients', views.PacientViewSet)

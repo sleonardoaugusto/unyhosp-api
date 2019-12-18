@@ -1,13 +1,13 @@
 from django.test import TestCase
 from unyhosp.test_utils.methods import ResourceMethods
-from unyhosp.core import models
+from unyhosp.core.hospital.model import Hospital
 import json
 
 
 class UTITest(TestCase, ResourceMethods):
     def setUp(self):
         self.resource = 'utis'
-        h = models.Hospital.objects.create(name='Albert Einstein')
+        h = Hospital.objects.create(name='Albert Einstein')
         self.data = {"name": "XPTO", "hospital": h.id}
 
     def test_get(self):
