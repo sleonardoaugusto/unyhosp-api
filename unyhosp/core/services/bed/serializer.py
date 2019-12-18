@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from . import model
 
-from unyhosp.core.pacient.serializer import PacientSerializer
+from unyhosp.core.services.pacient.serializer import PacientSerializer
 
 
 class BedReadSerializer(serializers.ModelSerializer):

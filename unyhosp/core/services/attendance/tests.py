@@ -1,9 +1,9 @@
 from django.test import TestCase
 from unyhosp.test_utils.methods import ResourceMethods
-from unyhosp.core.hospital.model import Hospital
-from unyhosp.core.uti.model import UTI
-from unyhosp.core.pacient.model import Pacient
-from unyhosp.core.bed.model import Bed
+from unyhosp.core.services.hospital.model import Hospital
+from unyhosp.core.services.uti.model import UTI
+from unyhosp.core.services.pacient.model import Pacient
+from unyhosp.core.services.bed.model import Bed
 import json
 
 

@@ -15,11 +15,11 @@ Including another URLconf
 """
 from django.urls import path, include
 from rest_framework import routers
-from unyhosp.core.hospital.view import HospitalViewSet
-from unyhosp.core.uti.view import UTIViewSet
-from unyhosp.core.pacient.view import PacientViewSet
-from unyhosp.core.bed.view import BedViewSet
-from unyhosp.core.attendance.view import AttendanceViewSet
+from unyhosp.core.services.hospital.view import HospitalViewSet
+from unyhosp.core.services.uti.view import UTIViewSet
+from unyhosp.core.services.pacient.view import PacientViewSet
+from unyhosp.core.services.bed.view import BedViewSet
+from unyhosp.core.services.attendance.view import AttendanceViewSet
 
 router = routers.DefaultRouter()
 router.register(r'hospitals', HospitalViewSet)

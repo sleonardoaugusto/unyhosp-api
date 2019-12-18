@@ -1,5 +1,5 @@
 from django.db import models
-from unyhosp.core.bed.model import Bed
+from unyhosp.core.services.bed.model import Bed
 
 
 class Attendance(models.Model):
