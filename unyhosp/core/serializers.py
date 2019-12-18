@@ -1,12 +1,7 @@
 from rest_framework import serializers
 
 from . import models
-
-
-class PacientSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = models.Pacient
-        fields = '__all__'
+from unyhosp.core.pacient.serializer import PacientSerializer
 
 
 class BedReadSerializer(serializers.ModelSerializer):

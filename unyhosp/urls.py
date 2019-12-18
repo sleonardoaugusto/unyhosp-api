@@ -18,12 +18,13 @@ from rest_framework import routers
 from unyhosp.core import views
 from unyhosp.core.hospital.view import HospitalViewSet
 from unyhosp.core.uti.view import UTIViewSet
+from unyhosp.core.pacient.view import PacientViewSet
 
 router = routers.DefaultRouter()
 router.register(r'hospitals', HospitalViewSet)
 router.register(r'utis', UTIViewSet)
+router.register(r'pacients', PacientViewSet)
 router.register(r'beds', views.BedViewSet)
-router.register(r'pacients', views.PacientViewSet)
 router.register(r'attendances', views.AttendanceViewSet)
 
 urlpatterns = [
