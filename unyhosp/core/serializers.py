@@ -3,12 +3,6 @@ from rest_framework import serializers
 from . import models
 
 
-class UTISerializer(serializers.ModelSerializer):
-    class Meta:
-        model = models.UTI
-        fields = '__all__'
-
-
 class PacientSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Pacient

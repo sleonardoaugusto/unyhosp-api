@@ -3,11 +3,6 @@ from rest_framework import viewsets
 from . import models, serializers
 
 
-class UTIViewSet(viewsets.ModelViewSet):
-    queryset = models.UTI.objects.all()
-    serializer_class = serializers.UTISerializer
-
-
 class PacientViewSet(viewsets.ModelViewSet):
     queryset = models.Pacient.objects.all()
     serializer_class = serializers.PacientSerializer
