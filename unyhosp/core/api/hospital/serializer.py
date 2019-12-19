@@ -12,7 +12,7 @@ class HospitalDefaultSerializer(serializers.ModelSerializer):
 
 
 class HospitalReadSerializer(serializers.ModelSerializer):
-    utis = UTIDefaultSerializer(many=True)
+    utis = UTIDefaultSerializer(many=True, read_only=True)
 
     class Meta:
         model = model.Hospital
