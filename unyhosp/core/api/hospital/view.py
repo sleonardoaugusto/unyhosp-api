@@ -5,4 +5,9 @@ from . import model, serializer
 
 class HospitalViewSet(viewsets.ModelViewSet):
     queryset = model.Hospital.objects.all()
-    serializer_class = serializer.HospitalSerializer
+
+    def get_serializer_class(self):
+        if self.action in ('list', 'retrieve'):
+            return serializer.HospitalReadSerializer
+
+        return serializer.HospitalActionsSerializer
