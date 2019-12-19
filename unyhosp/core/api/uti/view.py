@@ -5,4 +5,9 @@ from . import model, serializer
 
 class UTIViewSet(viewsets.ModelViewSet):
     queryset = model.UTI.objects.all()
-    serializer_class = serializer.UTISerializer
+
+    def get_serializer_class(self):
+        if self.action in ('list', 'retrieve'):
+            return serializer.UTIReadSerializer
+
+        return serializer.UTIDefaultSerializer
