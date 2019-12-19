@@ -11,14 +11,12 @@ class AttendanceTest(TestCase, ResourceMethods):
     def setUp(self):
         self.resource = 'attendances'
         h = Hospital.objects.create(name='Hospital - Albert Einstein')
-        u = UTI.objects.create(name='UTI - XPTO', hospital=h)
         p = Pacient.objects.create(
             name='Romildo Ferrarezzi',
             document_id=45009877899,
             email='romildo.f@gmail.com',
             date_of_birth='1995-08-06'
         )
-        b = Bed.objects.create(name='Leito - XYZ', uti=u, pacient=p)
         self.data = {
             "entry_reason": "Lorem Ipsum",
             "hma": "Lorem Ipsum",
@@ -37,7 +35,8 @@ class AttendanceTest(TestCase, ResourceMethods):
             "ventilation": "Lorem Ipsum",
             "complications": "Lorem Ipsum",
             "therapeutic_plan": "Lorem Ipsum",
-            "bed": b.id
+            "hospital": h.id,
+            "pacient": p.id
         }
 
     def test_get(self):

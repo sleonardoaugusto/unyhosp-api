@@ -1,5 +1,6 @@
 from django.db import models
-from unyhosp.core.api.bed.model import Bed
+from unyhosp.core.api.hospital.model import Hospital
+from unyhosp.core.api.pacient.model import Pacient
 
 
 class Attendance(models.Model):
@@ -20,5 +21,6 @@ class Attendance(models.Model):
     ventilation = models.TextField()
     complications = models.TextField()
     therapeutic_plan = models.TextField()
-    bed = models.ForeignKey(Bed, on_delete=models.CASCADE)
     created = models.DateTimeField(auto_now=True, blank=True)
+    hospital = models.ForeignKey(Hospital, on_delete=models.CASCADE)
+    pacient = models.ForeignKey(Pacient, on_delete=models.CASCADE)
