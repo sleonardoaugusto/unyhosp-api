@@ -10,4 +10,4 @@ class BedViewSet(viewsets.ModelViewSet):
         if self.action in ('list', 'retrieve'):
             return serializer.BedReadSerializer
 
-        return serializer.BedActionsSerializer
+        return serializer.BedDefaultSerializer

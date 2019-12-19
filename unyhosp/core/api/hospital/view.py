@@ -10,4 +10,4 @@ class HospitalViewSet(viewsets.ModelViewSet):
         if self.action in ('list', 'retrieve'):
             return serializer.HospitalReadSerializer
 
-        return serializer.HospitalActionsSerializer
+        return serializer.HospitalDefaultSerializer
