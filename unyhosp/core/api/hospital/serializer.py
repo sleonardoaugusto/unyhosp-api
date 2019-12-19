@@ -2,7 +2,7 @@ from rest_framework import serializers
 
 from . import model
 
-from unyhosp.core.api.uti.serializer import UTISerializer
+from unyhosp.core.api.uti.serializer import UTIDefaultSerializer
 
 
 class HospitalDefaultSerializer(serializers.ModelSerializer):
@@ -12,7 +12,7 @@ class HospitalDefaultSerializer(serializers.ModelSerializer):
 
 
 class HospitalReadSerializer(serializers.ModelSerializer):
-    utis = UTISerializer(many=True)
+    utis = UTIDefaultSerializer(many=True)
 
     class Meta:
         model = model.Hospital
