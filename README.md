@@ -1,6 +1,6 @@
-#unyhosp-api
+# unyhosp-api
 
-##Setup
+## Setup
 1. Clone this repo <br/>
 `$ git clone https://github.com/sleonardoaugusto/unyhosp-api`
 
