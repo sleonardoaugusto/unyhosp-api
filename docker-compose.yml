@@ -4,7 +4,8 @@ services:
   api:
     container_name: unyhosp
     build: .
-    command: python manage.py runserver 0.0.0.0:8000
+    command: bash -c "python manage.py migrate
+      && python manage.py runserver 0.0.0.0:8000"
     volumes:
       - ./:/usr/src/unyhosp-api/
     ports:
@@ -13,6 +14,7 @@ services:
       - .env
     depends_on:
       - db
+    restart: on-failure:10
   db:
     container_name: unyhosp_database
     image: mysql:5.7
