@@ -2,6 +2,7 @@ version: '3.7'
 
 services:
   api:
+    container_name: unyhosp_api
     build: .
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
@@ -10,3 +11,15 @@ services:
       - 8000:8000
     env_file:
       - .env
+    depends_on:
+      - db
+  db:
+    container_name: unyhosp_database
+    image: mysql:5.7
+    ports:
+      - '3306:3306'
+    environment:
+      MYSQL_DATABASE: 'unyhosp'
+      MYSQL_USER: 'admin'
+      MYSQL_PASSWORD: 'root'
+      MYSQL_ROOT_PASSWORD: 'root'
