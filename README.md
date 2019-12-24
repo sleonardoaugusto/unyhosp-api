@@ -9,3 +9,7 @@
 
 3. Fire up containers <br/>
 `$ docker-compose up -d`
+
+## Tests
+* Run tests
+`$ docker exec -it unyhosp_api pytest`
