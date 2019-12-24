@@ -10,7 +10,7 @@ class PacientTest(TestCase, ResourceMethods):
             "name": "Albertinho",
             "document_id": 45009877899,
             "email": "albertinho@gmail.com",
-            "date_of_birth": "1995-08-06"
+            "date_of_birth": "06/08/1995"
         }
 
     def test_get(self):
