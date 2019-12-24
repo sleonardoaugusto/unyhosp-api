@@ -1,4 +1,5 @@
 # unyhosp-api
+[![Build Status](https://travis-ci.com/sleonardoaugusto/unyhosp-api.svg?branch=master)](https://travis-ci.com/sleonardoaugusto/unyhosp-api)
 
 ## Setup
 1. Clone this repo <br/>
@@ -11,5 +12,5 @@
 `$ docker-compose up -d`
 
 ## Tests
-* Run tests
+* Run tests <br/>
 `$ docker exec -it unyhosp_api pytest`
