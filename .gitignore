@@ -1,6 +1,5 @@
 .unyhosp-api/
 .pytest_cache/
 .idea/
-migrations/
 db.sqlite3
 *.pyc
