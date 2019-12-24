@@ -87,7 +87,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'unyhosp',
-        'USER': 'admin',
+        'USER': 'root',
         'PASSWORD': 'root',
         'HOST': 'db',
         'PORT': 3306,
