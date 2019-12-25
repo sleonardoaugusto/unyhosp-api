@@ -5,11 +5,11 @@
 1. Clone this repo <br/>
 `$ git clone https://github.com/sleonardoaugusto/unyhosp-api`
 
-2. Build images <br/>
-`$ docker-compose build`
-
-3. Fire up containers <br/>
-`$ docker-compose up -d`
+2. Fire up containers
+* Develop <br/>
+`$ docker-compose -f docker-compose.yml up -d --build`
+* Production <br/>
+`$ docker-compose -f docker-compose.prod.yml up -d --build`
 
 ## Tests
 * Run tests <br/>
