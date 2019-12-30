@@ -1,5 +1,4 @@
 # unyhosp-api
-[![Build Status](https://travis-ci.org/sleonardoaugusto/unyhosp-frontend.svg?branch=master)](https://travis-ci.org/sleonardoaugusto/unyhosp-frontend)
 
 ## Setup
 1. Clone this repo <br/>

@@ -1,0 +1,46 @@
+stages:
+  - test
+  - deploy
+
+image: docker
+
+services:
+  - docker:dind
+
+tests:
+  stage: test
+  before_script:
+    - apk add python3
+    - apk add --no-cache mariadb-dev build-base
+    - apk add python3-dev
+    - apk update
+    - pip3 install -U setuptools
+    - apk add python-dev libffi-dev openssl-dev gcc libc-dev make
+    - pip3 install --upgrade pip
+    - pip3 install -r requirements.txt
+  script:
+    - pytest
+
+deploy:
+  stage: deploy
+  script:
+    - mkdir $DOCKER_CERT_PATH
+    - echo "$CA" > $DOCKER_CERT_PATH/ca.pem
+    - echo "$CLIENT_CERT" > $DOCKER_CERT_PATH/cert.pem
+    - echo "$CLIENT_KEY" > $DOCKER_CERT_PATH/key.pem
+    - apk add --no-cache py-pip
+    - apk update
+    - pip install -U setuptools
+    - apk add python-dev libffi-dev openssl-dev gcc libc-dev make
+    - pip install --upgrade pip
+    - pip install docker-compose
+    - docker-compose -f docker-compose.ci.yml up -d --build
+    - rm -rf $DOCKER_CERT_PATH
+  only:
+    - master
+  variables:
+    DOCKER_TLS_VERIFY: "1"
+    DOCKER_HOST: "tcp://54.165.214.13:2376"
+    DOCKER_CERT_PATH: "certs"
+  tags:
+    - docker
