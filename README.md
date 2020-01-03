@@ -6,7 +6,7 @@
 
 2. Fire up containers
 * Develop <br/>
-`$ docker-compose -f docker-compose.yml up -d --build`
+`$ docker-compose -f docker-compose.dev.yml up -d --build`
 * Production <br/>
 `$ docker-compose -f docker-compose.prod.yml up -d --build`
 
