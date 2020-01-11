@@ -19,5 +19,6 @@ class UTIReadSerializer(serializers.ModelSerializer):
         fields = (
             'id',
             'name',
-            'beds'
+            'beds',
+            'hospital'
         )
