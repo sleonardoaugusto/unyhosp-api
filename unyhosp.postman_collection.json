@@ -140,7 +140,7 @@
 			"name": "UTI",
 			"item": [
 				{
-					"name": "retrieve",
+					"name": "retrieve_by_id",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -153,6 +153,30 @@
 								"utis",
 								"uti_id",
 								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "retrieve_by_hospital",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/utis/?hospital_id=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"utis",
+								""
+							],
+							"query": [
+								{
+									"key": "hospital_id",
+									"value": "1"
+								}
 							]
 						}
 					},
@@ -271,7 +295,26 @@
 			"name": "Pacient",
 			"item": [
 				{
-					"name": "retrieve",
+					"name": "retrieve_by_id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/pacients/pacient_id/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"pacients",
+								"pacient_id",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "retrieve_by_pacient_name",
 					"request": {
 						"method": "GET",
 						"header": [],
