@@ -276,14 +276,19 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/pacients/pacient_id/",
+							"raw": "{{url}}/pacients/?name=maria",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"pacients",
-								"pacient_id",
 								""
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "maria"
+								}
 							]
 						}
 					},
