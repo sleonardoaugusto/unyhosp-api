@@ -510,13 +510,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/beds/1/",
+							"raw": "{{url}}/beds/bed_id/",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"beds",
-								"1",
+								"bed_id",
 								""
 							]
 						}
@@ -554,13 +554,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/beds/bed_id/",
+							"raw": "{{url}}/attendance/attendance_id/",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
-								"beds",
-								"bed_id",
+								"attendance",
+								"attendance_id",
 								""
 							]
 						}
@@ -573,12 +573,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/beds/",
+							"raw": "{{url}}/attendances/",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
-								"beds",
+								"attendances",
 								""
 							]
 						}
@@ -599,7 +599,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"entry_reason\": \"Ipsum Lorem\",\n    \"hma\": \"Ipsum Lorem\",\n    \"comorbidity\": \"Ipsum Lorem\",\n    \"atb\": \"Ipsum Lorem\",\n    \"hd\": \"Ipsum Lorem\",\n    \"medicines_in_use\": \"Ipsum Lorem\",\n    \"previous_pathologies\": \"Ipsum Lorem\",\n    \"allergies\": \"Ipsum Lorem\",\n    \"cultures\": \"Ipsum Lorem\",\n    \"vasoactive_drugs\": \"Ipsum Lorem\",\n    \"sedation\": \"Ipsum Lorem\",\n    \"venous_access\": \"Ipsum Lorem\",\n    \"diet\": \"Ipsum Lorem\",\n    \"probes_and_drains\": \"Ipsum Lorem\",\n    \"ventilation\": \"Ipsum Lorem\",\n    \"complications\": \"Ipsum Lorem\",\n    \"therapeutic_plan\": \"Ipsum Lorem\",\n    \"bed\": 1\n}",
+							"raw": "{\n    \"hospital\": 1,\n    \"pacient\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -633,7 +633,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"entry_reason\": \"Ipsum Lorem\",\n    \"hma\": \"Ipsum Lorem\",\n    \"comorbidity\": \"Ipsum Lorem\",\n    \"atb\": \"Ipsum Lorem\",\n    \"hd\": \"Ipsum Lorem\",\n    \"medicines_in_use\": \"Ipsum Lorem\",\n    \"previous_pathologies\": \"Ipsum Lorem\",\n    \"allergies\": \"Ipsum Lorem\",\n    \"cultures\": \"Ipsum Lorem\",\n    \"vasoactive_drugs\": \"Ipsum Lorem\",\n    \"sedation\": \"Ipsum Lorem\",\n    \"venous_access\": \"Ipsum Lorem\",\n    \"diet\": \"Ipsum Lorem\",\n    \"probes_and_drains\": \"Ipsum Lorem\",\n    \"ventilation\": \"Ipsum Lorem\",\n    \"complications\": \"Ipsum Lorem\",\n    \"therapeutic_plan\": \"Ipsum Lorem\",\n    \"bed\": 1\n}",
+							"raw": "{\n    \"entry_reason\": \"Ipsum Lorem\",\n    \"hma\": \"Ipsum Lorem\",\n    \"comorbidity\": \"Ipsum Lorem\",\n    \"atb\": \"Ipsum Lorem\",\n    \"hd\": \"Ipsum Lorem\",\n    \"medicines_in_use\": \"Ipsum Lorem\",\n    \"previous_pathologies\": \"Ipsum Lorem\",\n    \"allergies\": \"Ipsum Lorem\",\n    \"cultures\": \"Ipsum Lorem\",\n    \"vasoactive_drugs\": \"Ipsum Lorem\",\n    \"sedation\": \"Ipsum Lorem\",\n    \"venous_access\": \"Ipsum Lorem\",\n    \"diet\": \"Ipsum Lorem\",\n    \"probes_and_drains\": \"Ipsum Lorem\",\n    \"ventilation\": \"Ipsum Lorem\",\n    \"complications\": \"Ipsum Lorem\",\n    \"therapeutic_plan\": \"Ipsum Lorem\",\n    \"bed\": 1,\n    \"hospital\": 1,\n    \"pacient\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -641,13 +641,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/attendances/1/",
+							"raw": "{{url}}/attendances/attendance_id/",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"attendances",
-								"1",
+								"attendance_id",
 								""
 							]
 						}
