@@ -26,7 +26,7 @@ class HospitalTest(TestCase, ResourceMethods):
         url = self._url(resource=self.resource)
         _response = self.client.post(url, self.data)
         _response_data = json.loads(_response.content)
-        url = self._url(resource=self.resource, pk=_response_data['id'])
+        url = self._url(resource=self.resource, pk=_response_data.get('id'))
         response = self.client.put(url, self.data, content_type='application/json')
         self.assertEqual(200, response.status_code)
 
@@ -35,6 +35,6 @@ class HospitalTest(TestCase, ResourceMethods):
         url = self._url(resource=self.resource)
         _response = self.client.post(url, self.data)
         _response_data = json.loads(_response.content)
-        url = self._url(resource=self.resource, pk=_response_data['id'])
+        url = self._url(resource=self.resource, pk=_response_data.get('id'))
         response = self.client.delete(url, self.data, content_type='application/json')
         self.assertEqual(204, response.status_code)
