@@ -1,15 +1,14 @@
 from django.test import TestCase
 from unyhosp.test_utils.methods import ResourceMethods
 from unyhosp.core.api.hospital.model import Hospital
-from unyhosp.core.api.uti.model import UTI
 from unyhosp.core.api.pacient.model import Pacient
-from unyhosp.core.api.bed.model import Bed
 import json
 
 
 class AttendanceTest(TestCase, ResourceMethods):
     def setUp(self):
         self.resource = 'attendances'
+        self.url = self._url(resource=self.resource)
         h = Hospital.objects.create(name='Hospital - Albert Einstein')
         p = Pacient.objects.create(
             name='Romildo Ferrarezzi',
@@ -41,20 +40,17 @@ class AttendanceTest(TestCase, ResourceMethods):
 
     def test_get(self):
         """GET attendances/ must return status code 200 """
-        url = self._url(resource=self.resource)
-        response = self.client.get(url)
+        response = self.client.get(self.url)
         self.assertEqual(200, response.status_code)
 
     def test_post(self):
         """POST method must return status code 201"""
-        url = self._url(resource=self.resource)
-        response = self.client.post(url, self.data)
+        response = self.client.post(self.url, self.data)
         self.assertEqual(201, response.status_code)
 
     def test_put(self):
         """PUT method must return status code 200"""
-        url = self._url(resource=self.resource)
-        _response = self.client.post(url, self.data)
+        _response = self.client.post(self.url, self.data)
         _response_data = json.loads(_response.content)
         url = self._url(resource=self.resource, pk=_response_data.get('id'))
         response = self.client.put(url, self.data, content_type='application/json')
@@ -62,8 +58,7 @@ class AttendanceTest(TestCase, ResourceMethods):
 
     def test_delete(self):
         """DELETE method must reuturn status code 204"""
-        url = self._url(resource=self.resource)
-        _response = self.client.post(url, self.data)
+        _response = self.client.post(self.url, self.data)
         _response_data = json.loads(_response.content)
         url = self._url(resource=self.resource, pk=_response_data.get('id'))
         response = self.client.delete(url, self.data, content_type='application/json')
