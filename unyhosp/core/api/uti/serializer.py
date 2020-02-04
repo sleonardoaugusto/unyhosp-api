@@ -14,13 +14,9 @@ class UTIDefaultSerializer(serializers.ModelSerializer,
         fields = '__all__'
 
     def create(self, validated_data):
-        uti = UTI(
-            name=validated_data['name'],
-            hospital=validated_data['hospital']
-        )
-        uti.save()
-        self.apply_service(uti)
-        return uti
+        instance = super().create(validated_data)
+        self.apply_service(instance)
+        return instance
 
 
 class UTIReadSerializer(serializers.ModelSerializer):
