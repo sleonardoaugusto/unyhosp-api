@@ -3,7 +3,6 @@ from rest_framework import serializers
 from . import model
 
 from unyhosp.core.api.bed.serializer import BedDefaultSerializer
-from unyhosp.core.api.uti.model import UTI
 from .utils import UTIService
 
 
