@@ -1,4 +1,6 @@
 from rest_framework import viewsets
+from rest_framework.permissions import SAFE_METHODS
+
 from django_filters import rest_framework
 
 from . import model, serializer
@@ -17,7 +19,7 @@ class UTIViewSet(viewsets.ModelViewSet):
     filterset_class = UTIFilter
 
     def get_serializer_class(self):
-        if self.action in ('list', 'retrieve'):
+        if self.request.method in SAFE_METHODS:
             return serializer.UTIReadSerializer
 
         return serializer.UTIDefaultSerializer
